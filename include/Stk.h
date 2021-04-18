@@ -7,8 +7,8 @@
 #include <sstream>
 #include <vector>
 #include <stdexcept>
-#pragma once
-#include <JuceHeader.h>
+//#pragma once
+//#include <JuceHeader.h>
 //#include <cstdlib>
 
 /*! \namespace stk
@@ -434,7 +434,7 @@ public:
    */
   StkFloat dataRate( void ) const { return dataRate_; };
   
-    void applyToBuffer(juce::AudioBuffer<StkFloat>& buffer);
+    //void applyToBuffer(juce::AudioBuffer<StkFloat>& buffer);
     
     
 
@@ -446,31 +446,18 @@ protected:
   unsigned int nChannels_;
   size_t size_;
   size_t bufferSize_;
-    unsigned int juceChannels;
-    int juceBufferLength;
+   // unsigned int juceChannels;
+   // int juceBufferLength;
 
 };
 
 
+/*
 inline void StkFrames::applyToBuffer(juce::AudioBuffer<StkFloat> &buffer)
 {
-    juceChannels = buffer.getNumChannels();
-    juceBufferLength = buffer.getNumSamples();
-    for(int channel = 0; channel < nChannels_; ++channel)
-    {
-        if(channel < juceChannels)
-        {
-            for(size_t sample = 0; sample < size_; ++sample)
-            {
-               if(sample < (size_t)juceBufferLength)
-               {
-                   buffer.setSample(channel, sample, _data[sample * nChannels_ + channel]);
-               }
-            }
-        }
-    }
+    
 }
-
+*/
 inline bool StkFrames :: empty() const
 {
   if ( size_ > 0 ) return false;
