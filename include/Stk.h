@@ -7,8 +7,6 @@
 #include <sstream>
 #include <vector>
 #include <stdexcept>
-//#pragma once
-//#include <JuceHeader.h>
 //#include <cstdlib>
 
 /*! \namespace stk
@@ -446,18 +444,8 @@ protected:
   unsigned int nChannels_;
   size_t size_;
   size_t bufferSize_;
-   // unsigned int juceChannels;
-   // int juceBufferLength;
-
 };
 
-
-/*
-inline void StkFrames::applyToBuffer(juce::AudioBuffer<StkFloat> &buffer)
-{
-    
-}
-*/
 inline bool StkFrames :: empty() const
 {
   if ( size_ > 0 ) return false;
